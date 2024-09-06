@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    /* margin-top: 20px; */
+    cursor: pointer;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; /* Центрирование содержимого ячеек */
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+input[type="checkbox"] {
+    margin: 0;
+}
+
+#deleteButton {
+    display: none; /* Скрыть кнопку по умолчанию */
+}
+
+#table-button {
+    display: flex;
+    flex-direction: column;      /* Располагаем элементы вертикально */
+    gap: 10px;                   /* Добавляем отступ между строками */
+    padding: 10px;              /* Отступы вокруг контейнера */
+}
+
+#header {
+    display: flex;              /* Используем Flexbox для заголовка и кнопки */
+    align-items: center;        /* Центрируем элементы по вертикали */
+    justify-content: space-between; /* Распределяем элементы по бокам */
+}
+
+#tableTitle {
+    margin: 0;                  /* Убираем внешние отступы заголовка */
+}
+
+#deleteButton {
+    margin-left: 10px;          /* Отступ слева от кнопки */
+}
+
+#studentsTable {
+    border-collapse: collapse;  /* Убираем пробелы между границами ячеек */
+    width: 100%;                 /* Ширина таблицы на 100% контейнера */
+}
+
+#studentsTable th, #studentsTable td {
+    border: 1px solid #ddd;     /* Границы ячеек таблицы */
+    padding: 8px;               /* Отступ внутри ячеек */
+    text-align: center;         /* Центрируем текст в ячейках */
+}
+
+#addStudentForm {
+    margin-top: 20px;
+}
+
+#studentForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#studentForm label {
+    font-size: 16px;
+}
+
+#studentForm input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#studentForm button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+#studentForm button:hover {
+    background-color: #45a049;
+}
+

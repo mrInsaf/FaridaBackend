@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Группы и Студенты</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Выберите группу</h1>
+    <label for="groups">Выберите группу:</label>
+    <select id="groups">
+        <option value="">Загрузка...</option>
+    </select>
+    <br>
+    <button onclick="submitGroup()">Подтвердить</button>
+    
+    <div id="table-button">
+        <div id="header">
+            <h1 id="tableTitle">Таблица студентов</h1>
+            <button id="deleteButton" onclick="deleteSelected()">Удалить выбранные</button>
+        </div>
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Выбрать</th>
+                    <th>ID</th>
+                    <th>Имя</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="3">Нет данных</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="addStudentForm">
+        <h2>Добавить студента</h2>
+        <form id="studentForm">
+            <label for="studentName">Имя:</label>
+            <input type="text" id="studentName" name="studentName" required>
+            <button type="submit">Добавить студента</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
