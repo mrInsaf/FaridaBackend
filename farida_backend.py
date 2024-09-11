@@ -6,10 +6,15 @@ from pydantic import BaseModel
 from typing import Optional
 
 from fastapi.middleware.cors import CORSMiddleware
+from starlette.responses import FileResponse
+from starlette.staticfiles import StaticFiles
 
 from db import *
 
 app = FastAPI()
+
+# Указываем директорию, откуда будут подаваться статические файлы
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,6 +23,11 @@ app.add_middleware(
     allow_methods=["*"],  # Разрешить все методы (GET, POST, DELETE и т.д.)
     allow_headers=["*"],  # Разрешить все заголовки
 )
+
+@app.get("/index")
+async def get_index():
+    return FileResponse("static/index.html")
+
 
 @app.get("/groups/{teacher_id}")
 async def get_groups_by_teacher_id(teacher_id: int):
