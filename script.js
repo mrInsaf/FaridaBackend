@@ -2,11 +2,12 @@ const teacherId = 5061328116;  // Известный заранее teacher_id
 const groupsSelect = document.getElementById("groups");
 const studentsTable = document.getElementById("studentsTable").getElementsByTagName('tbody')[0];
 const deleteButton = document.getElementById('deleteButton');
+const baseUrl = 'http://185.50.202.243:8000';  // Выделенный baseUrl
 
 // Функция для получения групп
 async function fetchGroups() {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/groups/${teacherId}`);
+        const response = await fetch(`${baseUrl}/groups/${teacherId}`);
         if (!response.ok) {
             throw new Error("Не удалось получить группы");
         }
@@ -30,7 +31,7 @@ async function fetchGroups() {
 // Функция для получения студентов по выбранной группе
 async function fetchStudents(groupId) {
     try {
-        const response = await fetch(`http://127.0.0.1:8000/students/group/${groupId}`);
+        const response = await fetch(`${baseUrl}/students/group/${groupId}`);
         if (!response.ok) {
             throw new Error("Не удалось получить студентов");
         }
@@ -72,7 +73,7 @@ async function deleteSelected() {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/students/', {
+        const response = await fetch(`${baseUrl}/students/`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -143,7 +144,7 @@ async function addStudent(event) {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/students/', {
+        const response = await fetch(`${baseUrl}/students/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
