@@ -2,7 +2,7 @@ const teacherId = 5061328116;  // Известный заранее teacher_id
 const groupsSelect = document.getElementById("groups");
 const studentsTable = document.getElementById("studentsTable").getElementsByTagName('tbody')[0];
 const deleteButton = document.getElementById('deleteButton');
-const baseUrl = 'http://185.50.202.243:8000';  // Выделенный baseUrl
+const baseUrl = 'http://185.50.202.243/farida_backend';  // Выделенный baseUrl
 
 // Функция для получения групп
 async function fetchGroups() {
