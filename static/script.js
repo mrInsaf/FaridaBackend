@@ -5,7 +5,7 @@ const deleteButton = document.getElementById('deleteButton');
 const baseUrl = 'http://185.50.202.243/farida_backend';  // Выделенный baseUrl
 
 let tg = window.Telegram.WebApp;
-console.log("chat id is: " + tg.initDataUnsafe.user.id);
+//console.log("chat id is: " + tg.initDataUnsafe.user.id);
 
 // Функция для получения групп
 async function fetchGroups() {
