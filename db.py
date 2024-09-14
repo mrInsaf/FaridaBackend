@@ -26,6 +26,33 @@ def get_connection():
         return None
 
 
+def execute_query(query: str, params: tuple = ()) -> int:
+    """ Выполняет запрос к базе данных и возвращает количество затронутых строк. """
+    try:
+        connection = mysql.connector.connect(
+            host='localhost',  # Замените на ваш хост
+            user='your_username',  # Замените на ваше имя пользователя
+            password='your_password',  # Замените на ваш пароль
+            database='your_database'  # Замените на вашу базу данных
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+            cursor.execute(query, params)
+            connection.commit()
+            affected_rows = cursor.rowcount
+            cursor.close()
+            return affected_rows
+
+    except Error as e:
+        print(f"Error: {e}")
+        raise
+    finally:
+        if connection.is_connected():
+            connection.close()
+
+
+
 def select(query):
     conn = get_connection()
     if conn:

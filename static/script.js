@@ -176,5 +176,34 @@ async function addStudent(event) {
     }
 }
 
+document.getElementById('updateLastNameButton').addEventListener('click', function() {
+    const studentId = document.getElementById('studentId').value;
+    const newLastName = document.getElementById('newLastName').value;
+
+    updateLastName(studentId, newLastName);
+});
+
+async function updateLastName(studentId, newLastName) {
+    try {
+        const response = await fetch(`baseUrl/students/${studentId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ last_name: newLastName })
+        });
+
+        if (!response.ok) {
+            throw new Error("Не удалось обновить фамилию студента");
+        }
+
+        const result = await response.json();
+        alert(result.message);
+    } catch (error) {
+        console.error("Ошибка при обновлении фамилии студента:", error);
+        alert("Не удалось обновить фамилию студента");
+    }
+}
+
 // Добавляем обработчик события к форме
 document.getElementById('studentForm').addEventListener('submit', addStudent);
