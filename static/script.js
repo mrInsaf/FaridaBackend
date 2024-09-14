@@ -176,11 +176,13 @@ async function addStudent(event) {
     }
 }
 
-document.getElementById('updateLastNameButton').addEventListener('click', function() {
-    const studentId = document.getElementById('studentId').value;
-    const newLastName = document.getElementById('newLastName').value;
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('updateLastNameButton').addEventListener('click', function() {
+        const studentId = document.getElementById('studentId').value;
+        const newLastName = document.getElementById('newLastName').value;
 
-    updateLastName(studentId, newLastName);
+        updateLastName(studentId, newLastName);
+    });
 });
 
 async function updateLastName(studentId, newLastName) {
