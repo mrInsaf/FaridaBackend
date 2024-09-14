@@ -184,6 +184,7 @@ document.getElementById('updateLastNameButton').addEventListener('click', functi
 });
 
 async function updateLastName(studentId, newLastName) {
+    console.log("updateLastName")
     try {
         const response = await fetch(`baseUrl/students/${studentId}`, {
             method: 'PUT',
