@@ -4,7 +4,7 @@ from mysql.connector import pooling
 db_config = {
     'user': 'stepan',
     'password': 'stepan',
-    'host': '185.50.202.243',
+    'host': '185.50.202.243:8080',
     'database': 'farida',
 }
 
@@ -44,7 +44,7 @@ def execute_query(query: str, params: tuple = ()) -> int:
             cursor.close()
             return affected_rows
 
-    except Error as e:
+    except Exception as e:
         print(f"Error: {e}")
         raise
     finally:

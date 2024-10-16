@@ -134,6 +134,16 @@ function submitGroup() {
 // Добавляем обработчик события к кнопке "Удалить"
 deleteButton.addEventListener('click', deleteSelected);
 
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('updateLastNameButton').addEventListener('click', function() {
+        const studentId = document.getElementById('studentId').value;
+        const newLastName = document.getElementById('newLastName').value;
+
+        updateLastName(studentId, newLastName);
+    });
+});
+
+
 // Функция для добавления студента
 async function addStudent(event) {
     event.preventDefault(); // Предотвратить стандартное поведение формы
@@ -176,15 +186,6 @@ async function addStudent(event) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('updateLastNameButton').addEventListener('click', function() {
-        const studentId = document.getElementById('studentId').value;
-        const newLastName = document.getElementById('newLastName').value;
-
-        updateLastName(studentId, newLastName);
-    });
-});
-
 async function updateLastName(studentId, newLastName) {
     console.log("updateLastName")
     try {
@@ -210,3 +211,4 @@ async function updateLastName(studentId, newLastName) {
 
 // Добавляем обработчик события к форме
 document.getElementById('studentForm').addEventListener('submit', addStudent);
+
