@@ -4,7 +4,7 @@ from mysql.connector import pooling
 db_config = {
     'user': 'stepan',
     'password': 'stepan',
-    'host': '185.50.202.243:8080',
+    'host': 'mr-morkow.ru:8080',
     'database': 'farida',
 }
 
